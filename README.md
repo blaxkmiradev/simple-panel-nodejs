@@ -25,7 +25,7 @@ A minimalist, high-performance administrative panel contained entirely within a 
 Get your environment ready in seconds:
 
 # Clone the repository
-git clone [https://github.com/yourusername/simple-panel-nodejs.git](https://github.com/yourusername/simple-panel-nodejs.git)
+git clone [https://github.com/blaxkmiradev/simple-panel-nodejs.git))
 cd simple-panel-nodejs
 
 # Install lightweight dependencies
