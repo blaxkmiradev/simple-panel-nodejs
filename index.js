@@ -4,7 +4,7 @@
  * 1. Save as admin_panel.js
  * 2. Run: node admin_panel.js
  * 3. Open http://localhost:3000
- * 4. Login: admin / admin
+ * 4. Login: Mira / Nika
  */
 
 const http = require('http');
@@ -14,7 +14,9 @@ const { spawn, exec } = require('child_process');
 const crypto = require('crypto');
 
 // --- CONFIGURATION ---
-const PORT = 2000;
+const PORT = 3000;
+const ADMIN_USERNAME = 'Mira';
+const ADMIN_PASSWORD = 'Nika';
 const BOTS_DIR = path.join(__dirname, 'bots');
 const DB_SERVERS = path.join(__dirname, 'servers.json');
 const DB_USERS = path.join(__dirname, 'users.json');
@@ -78,7 +80,7 @@ function loadData() {
     }
 
     if (Object.keys(users).length === 0) {
-        users['admin'] = { password: 'admin', role: 'admin' };
+        users[ADMIN_USERNAME] = { password: ADMIN_PASSWORD, role: 'admin' };
         saveUsers();
     }
 }
@@ -639,7 +641,8 @@ const HTML_CONTENT = `
         async function deleteUser(u) { if(confirm('Delete?')) await API.deleteUser(u); renderUsers(); }
         async function control(id, action) { await API.control(id, action); renderServers(); }
         
-        async function renderUsers() { const l = await API.getUsers(); document.getElementById('user-list').innerHTML = Object.keys(l).map(u => \`<tr><td class="p-4 text-white">\${u}</td><td class="p-4">\${l[u].role}</td><td class="p-4 text-right">\${u!=='admin'?\`<button onclick="deleteUser('\${u}')" class="text-rose-500"><i class="fa-solid fa-trash"></i></button>\`:''}</td></tr>\`).join(''); }
+        const ADMIN_USERNAME = "${ADMIN_USERNAME}";
+        async function renderUsers() { const l = await API.getUsers(); document.getElementById('user-list').innerHTML = Object.keys(l).map(u => \`<tr><td class="p-4 text-white">\${u}</td><td class="p-4">\${l[u].role}</td><td class="p-4 text-right">\${u!==ADMIN_USERNAME?\`<button onclick="deleteUser('\${u}')" class="text-rose-500"><i class="fa-solid fa-trash"></i></button>\`:''}</td></tr>\`).join(''); }
         
         const termInput = document.getElementById('term-input');
         const termOutput = document.getElementById('term-output');
@@ -801,7 +804,7 @@ const server = http.createServer(async (req, res) => {
         if(currentUser.role !== 'admin') { json({error:'Forbidden'}, 403); return; }
         if(req.method === 'GET') { json(users); return; }
         if(req.method === 'POST') { const b = JSON.parse(await getBody()); if(users[b.username]) return json({error:'Exists'}); users[b.username] = { password: b.password, role: b.role }; saveUsers(); json({ok:true}); return; }
-        if(req.method === 'DELETE') { const u = req.url.split('/').pop(); if(u === 'admin') return json({error:'Cannot delete root'}); delete users[u]; saveUsers(); json({ok:true}); return; }
+        if(req.method === 'DELETE') { const u = req.url.split('/').pop(); if(u === ADMIN_USERNAME) return json({error:'Cannot delete root'}); delete users[u]; saveUsers(); json({ok:true}); return; }
     }
 
     if(req.url === '/api/logs') { json(logs); return; }
