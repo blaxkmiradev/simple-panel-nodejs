@@ -53,11 +53,11 @@ Value
 
 Username
 
-admin
+Mira
 
 Password
 
-admin
+Nika
 
 📦 Deployment Note
 
