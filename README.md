@@ -1,75 +1,81 @@
-⚡ Simple-Panel-NodeJS
+<div align="center">
 
-<p align="center">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Node.js-339933%3Fstyle%3Dfor-the-badge%26logo%3Dnodedotjs%26logoColor%3Dwhite" alt="Node.js" />
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/License-MIT-yellow.svg%3Fstyle%3Dfor-the-badge" alt="License" />
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Maintained%253F-yes-green.svg%3Fstyle%3Dfor-the-badge" alt="Maintained" />
-</p>
+# ⚡ Simple Panel NodeJS
 
-A minimalist, high-performance administrative panel contained entirely within a single file. Specifically engineered for rapid deployment on HostNode or any lightweight Node.js environment.
+A minimalist, high-performance admin panel contained entirely in a **single file**.  
+Engineered for rapid deployment on HostNode or any lightweight Node.js environment.
 
-✨ Core Features
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
+![Maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)
 
-🚀 Ultra-Lightweight: Entire logic resides in a single index.js file for zero-friction management.
+</div>
 
-🎨 Sleek Interface: A premium, dark-themed dashboard built with Tailwind CSS.
+---
 
-🔐 Plug-and-Play Auth: Secure, session-based authentication ready out of the box.
+## ✨ Core Features
 
-📱 Adaptive Design: Fully responsive layout optimized for Desktop, Tablet, and Mobile.
+| | Feature | Description |
+|---|---|---|
+| 🚀 | **Ultra-Lightweight** | Entire logic in a single `index.js` — zero-friction deployment |
+| 🎨 | **Sleek Interface** | Premium dark-themed dashboard built with Tailwind CSS |
+| 🔐 | **Plug-and-Play Auth** | Secure session-based authentication, ready out of the box |
+| 📱 | **Adaptive Design** | Fully responsive across desktop, tablet, and mobile |
 
-🛠 Quick Start
+---
 
-1. Installation
+## 🛠 Quick Start
 
-Get your environment ready in seconds:
+### 1. Clone & Install
 
+```bash
 # Clone the repository
-git clone [https://github.com/blaxkmiradev/simple-panel-nodejs.git))
+git clone https://github.com/blaxkmiradev/simple-panel-nodejs.git
 cd simple-panel-nodejs
 
-# Install lightweight dependencies
+# Install dependencies
 npm install express express-session
+```
 
+### 2. Launch
 
-2. Launch
-
-Start your engine:
-
+```bash
 node index.js
+```
 
-
-3. Access
+### 3. Access
 
 Open your browser and navigate to:
 
-👉 http://localhost:3000
+> 👉 **http://localhost:3000**
 
-Default Credentials:
+**Default credentials:**
 
-Field
+| Field | Value |
+|---|---|
+| Username | `Mira` |
+| Password | `Nika` |
 
-Value
+---
 
-Username
+## 📦 Deployment
 
-Mira
+> This project is optimized for **HostNode**.  
+> Simply upload `index.js` and `package.json`, install your dependencies, and you're live.  
+> No complex build steps required.
 
-Password
+---
 
-Nika
+## 📞 Support & Contact
 
-📦 Deployment Note
+Need custom modifications, features, or technical support? Reach out directly:
 
-This project is optimized for HostNode. To deploy, simply upload index.js and package.json, install your dependencies, and you're live. No complex build steps required.
+- **Telegram:** [@krisneverdie](https://t.me/krisneverdie)
 
-📞 Support & Contact
+---
 
-Need custom modifications, custom features, or technical support? Reach out directly:
+<div align="center">
 
-Telegram: @krisneverdie
+Created with ❤️ by [krisneverdie](https://t.me/krisneverdie)
 
-<p align="center">
-<br />
-<b>Created with ❤️ by <a href="https://www.google.com/search?q=https://t.me/krisneverdie">krisneverdie</a></b>
-</p>
+</div>
